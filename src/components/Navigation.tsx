@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import logoimage from "@/assets/image.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +17,7 @@ const Navigation = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
@@ -29,26 +30,26 @@ const Navigation = () => {
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'glass-effect shadow-3d border-b border-white/10' 
-          : 'bg-transparent'
+        isScrolled
+          ? "glass-effect shadow-3d border-b border-white/10"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollToSection('hero')}>
-            <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl rotate-45 shadow-3d group-hover:rotate-[60deg] transition-transform duration-500"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white -rotate-45 group-hover:-rotate-[60deg] transition-transform duration-500">ن</span>
-              </div>
-            </div>
-            <div className="text-right hidden md:block">
-              <h2 className="text-xl font-bold text-white leading-tight">نسور المستقبل</h2>
-              <p className="text-xs text-white/80">دهانات جوتن المعتمدة</p>
+          <div
+            className="flex items-center gap-3 cursor-pointer group"
+            onClick={() => scrollToSection("hero")}
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 relative">
+              <img
+                src={logoimage} 
+                alt="نسور المستقبل"
+                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
           </div>
 
@@ -72,9 +73,9 @@ const Navigation = () => {
               <Phone className="w-4 h-4" />
               <span className="text-sm font-semibold">0555-123-456</span>
             </div>
-            <Button 
+            <Button
               size="sm"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="bg-white text-primary hover:bg-white/90 font-bold shadow-3d hover:scale-105 transition-all duration-300"
             >
               احجز استشارة مجانية
@@ -92,9 +93,9 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div 
+      <div
         className={`lg:hidden overflow-hidden transition-all duration-500 ${
-          isMobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="glass-effect border-t border-white/10 shadow-3d">
@@ -114,8 +115,8 @@ const Navigation = () => {
                 <Phone className="w-5 h-5" />
                 <span className="font-semibold">0555-123-456</span>
               </div>
-              <Button 
-                onClick={() => scrollToSection('contact')}
+              <Button
+                onClick={() => scrollToSection("contact")}
                 className="w-full bg-white text-primary hover:bg-white/90 font-bold shadow-3d"
               >
                 احجز استشارة مجانية
