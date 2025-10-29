@@ -36,12 +36,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in-up">
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-effect rounded-full border shadow-3d hover:scale-105 transition-transform duration-300">
-            <Paintbrush className="w-5 h-5 text-white" />
-            <span className="text-white font-semibold text-sm">وكيل معتمد لدهانات جوتن</span>
-            <Award className="w-5 h-5 text-white" />
-          </div>
-          
+     
           {/* Main Title with 3D effect */}
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
             نسور المستقبل
